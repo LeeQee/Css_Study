@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定位的概念</title>
+</head>
+
+<body>
+    <!-- 
+        postion的属性值
+        -- static,默认值，静止定位，没有任何效果
+        -- relative相对定位
+        -- absolute绝对定位
+        -- fixed固定定位
+        -- stickly 粘滞定位
+     -->
+    <!-- 
+        相对定位
+        -当元素开启了positon:relative则开启了元素的相对定位
+        相对定位的特点
+        1.元素开启了相对定位后，如果不设置偏移量元素位置不会发生任何变化
+        2.相对定位是参照元素在文档流中的位置进行定位的
+        偏移量（offset）
+        -当元素开启了定位后，可以通过偏移量设置元素的位置
+        - top
+        - bottom
+        - right
+        - left 
+    -->
+    <div class="box1">
+
+    </div>
+    <div class="box2">
+        开启相对定位，和Box1在同一行
+    </div>
+    <div class="box3">
+
+    </div>
+</body>
+<style>
+    .box1 {
+        height: 100px;
+        width: 100px;
+        background-color: antiquewhite;
+    }
+
+    .box2 {
+        height: 100px;
+        width: 100px;
+        background-color: red;
+        /* 开启相对定位 */
+        position: relative;
+        left: 100px;
+        top: -100px;
+    }
+
+    .box3 {
+        height: 100px;
+        width: 100px;
+        background-color: green;
+    }
+</style>
+
+</html>

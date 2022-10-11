@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BFC高度塌陷问题处理·</title>
+</head>
+
+<body>
+    <!-- 
+        高度塌陷
+        - 在文档流默认情况下，父元素的高度会被子元素撑开
+        - 在浮动布局的情况下，当子元素设置浮动布局则会脱离文档流，导致父元素的高度丢失不会被撑开。
+            - 父元素高度丢失后，其下的元素会自动上移，导致页面布局混乱
+     -->
+    <!-- 
+        BFC(Block Formating Context) 块级格式化环境
+        - BFC是一个CSS中的一个隐含的属性，可以为一个元素开启BFC
+            -开启BFC的元素会变成一个独立的布局元素，相当于一个独立的布局区域进行布局计算，
+                不在和外面整体的布局区域相关联，和外界的文档流解除关联
+        - 元素开启BFC后的特点
+            - 1.开启BFC的元素不会被浮动元素覆盖
+            - 2.开启BFC的元素子元素和父元素的外边距不会重叠
+            - 3.开启BFC的元素可以包含浮动的子元素
+        - 可以通过一些特殊方式来开启元素的BFC
+            - 1.设置元素的浮动(不推荐，副作用较大，父元素宽度也会自适应)
+            - 2.设置行内块级元素(不推荐，副作用较大，父元素宽度也会自适应)
+            - 3.设置overflow属性不为visible（overflow:hidden推荐）
+    -->
+
+    <!-- 演示1.开启BFC的元素不会被浮动元素覆盖 -->
+    <div>
+        <h1>演示1.开启BFC的元素不会被浮动元素覆盖</h1>
+        <div class="box1"></div>
+        <div class="box2">
+            <!-- /* 开启BFC，否则box2会向上移动被Box1覆盖住 */ -->
+        </div>
+        <hr />
+    </div>
+    <!-- 演示2.开启BFC的子元素和父元素的外边距不会重叠 -->
+    <div>
+        <div class="father">
+            <div class="son">3333</div>
+        </div>
+    </div>
+    <!-- 演示3.开启BFC的元素可以包含浮动的子元素 -->
+    <div>
+        <h1>演示3.开启BFC的元素可以包含浮动的子元素</h1>
+        <div class="outer">
+            <div class="inner">
+                <!-- 该元素设置float和不设置float决定了父元素的高度是否被撑开，且父元素下面的test元素的位置的改变 -->
+            </div>
+        </div>
+        <div class="test">
+            <!-- 该元素的位置会因为inner元素设置浮动后上移 -->
+        </div>
+        <hr />
+    </div>
+</body>
+<style>
+    .father {
+        width: 200px;
+        height: 200px;
+        background: aqua;
+        overflow: hidden;
+    }
+
+    .son {
+        width: 100px;
+        height: 100px;
+        background: black;
+        margin-top: 50px;
+
+    }
+
+    .box1 {
+        width: 100px;
+        height: 100px;
+        background: blueviolet;
+        float: left;
+    }
+
+    .box2 {
+        width: 100px;
+        height: 100px;
+        background: green;
+        /* 开启BFC，否则box2会向上移动被Box1覆盖住 */
+        /* float: left; */
+        /* display: inline-block; */
+        overflow: hidden;
+    }
+
+    .outer {
+        border: 10px solid red;
+        /* 解决高度塌陷，开启BFC */
+        /* 1.设置父元素浮动,父元素高度会被撑起，副作用：但是宽度也会自适应宽度包裹住。同时父元素下的子元素也会上移被覆盖 */
+        /* float: left; */
+        /* 2.设置元素为行内块级元素。副作用:将父元素设置为行内块元素本身就不合适，且宽度也会自适应宽度包裹住 */
+        /* display: inline-block; */
+        /* 3.overflow:hidden,推荐 */
+        overflow: hidden;
+    }
+
+    .inner {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        float: left;
+    }
+
+    .test {
+        width: 200px;
+        height: 200px;
+        background-color: yellow;
+    }
+</style>
+
+</html>

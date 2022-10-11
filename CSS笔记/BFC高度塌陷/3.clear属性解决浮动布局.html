@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BFC高度塌陷问题处理·</title>
+</head>
+
+<body>
+    <!-- 
+        box1设置浮动布局后，box3会向上移动被覆盖
+        如果想box3不受box1浮动的影响，可以使用clear属性
+        -- clear用来清除浮动对元素的影响，原理就是计算浮动元素的高度，为当前元素
+            添加一个外边距Margin-top
+        -- clear:left/right/both
+     -->
+    <div class="box1">box1-left</div>
+    <div class="box2">box2-right</div>
+    <div class="box3">box3-bottom</div>
+
+</body>
+<style>
+    .box1 {
+        width: 100px;
+        height: 100px;
+        background-color: #bfa;
+        float: left;
+    }
+
+    .box2 {
+        width: 200px;
+        height: 200px;
+        background-color: darksalmon;
+        float: right;
+    }
+
+    .box3 {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        /* clear: left; */
+        /* clear: right; */
+        clear: both;
+    }
+</style>
+
+</html>

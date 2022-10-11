@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BFC高度塌陷问题处理·</title>
+</head>
+
+<body>
+
+    <div class="box1">
+        <div class="box2"></div>
+        <!-- <div class="box3">
+
+            <p>1.新增一个元素非浮动布局可以撑开父元素，</p>
+            <p>2.该元素高度多高就可以撑开父元素多高，但是无法确定上面相邻元素的高度，所以无法固定该元素高度</p>
+            <p>3.尝试将该元素移动到浮动元素的下面，使其不受浮动布局的影响，</p>
+            <p>4.利用clear清除该元素的浮动影响</p>
+            <p>5.删除文字，完成高度塌陷的初步解决</p>
+            <p>6.这种方式虽然可以解决高度塌陷但是是通过修改dom结构完成的，而高度塌陷属于样式问题，应该通过Css去解决</p>
+            <p>7.配合伪类after在父元素的后面插入一个元素，就可以不用修改dom结构破坏原生代码</p>
+
+        </div> -->
+    </div>
+
+</body>
+<style>
+    .box1 {
+        border: 10px solid red;
+    }
+
+    /* 使用伪类配合clear解决高度塌陷问题,思路按照box3来，就可以不用修改dom结构了 */
+    .box1::after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+
+    .box2 {
+        width: 200px;
+        height: 200px;
+        background-color: darksalmon;
+        float: left;
+    }
+
+    .box3 {
+        /* 通过修改dom配合css清除浮动clear解决高度塌陷不推荐该方式 */
+        background-color: aquamarine;
+        clear: both;
+    }
+</style>
+
+</html>
