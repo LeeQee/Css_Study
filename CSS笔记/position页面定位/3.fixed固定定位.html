@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>固定定位</title>
+</head>
+
+<body>
+    <!-- 
+        postion的属性值
+        -- static,默认值，静止定位，没有任何效果
+        -- relative相对定位
+        -- absolute绝对定位
+        -- fixed固定定位
+        -- stickly 粘滞定位
+     -->
+    <!-- 
+        固定定位
+        -当元素开启了positon:fixed则开启了元素的固定定位
+        固定定位的特点,也是一种特殊的绝对定位，大部分特点和绝对定位相同
+        1.元素开启了固定定位后，如果不设置偏移量元素 位置！！ 不会发生任何变化（但是元素的性质发生了变化与relative不一样）
+        2.开启固定定位后，元素会脱离文档流
+        3.元素的级别会被提升（类似于z-index的层级被提升）
+        4.固定定位的元素行内元素变成块元素，元素的宽度被内容撑开
+        5.固定定位是相对于  ！！！视口！！！ 定位，即网页的可视窗口定位，不会随着王网页的滚动而发生位置的变化
+       
+    -->
+    <div class="box1">
+
+    </div>
+    <div class="box4">
+        <div class="box5">
+            <div class="box2">
+                开启固定定位
+            </div>
+        </div>
+    </div>
+
+    <div class="box3">
+
+    </div>
+</body>
+<style>
+    body{
+        /* 调整网页高度,增加滚动条验证固定定位不会随着网页滚动而变化,是根据视口定位的 */
+        height: 2999px;
+    }
+    .box1 {
+        height: 100px;
+        width: 100px;
+        background-color: antiquewhite;
+    }
+
+    .box2 {
+        height: 100px;
+        width: 100px;
+        background-color: red;
+        /* 开启固定定位，脱离文档流，根据视口定位 */
+        position: fixed;
+        left: 0;
+        top: 0;
+    }
+
+    .box3 {
+        height: 200px;
+        width: 200px;
+        background-color: green;
+    }
+    .box4{
+        height: 400px;
+        width: 400px;
+        background-color: blueviolet;
+        padding: 10px;
+        position: relative;
+    }
+    .box5{
+        height: 300px;
+        width: 300px;
+        background-color: darkkhaki;
+        
+    }
+</style>
+
+</html>

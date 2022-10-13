@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>绝对定位</title>
+</head>
+
+<body>
+    <!-- 
+        postion的属性值
+        -- static,默认值，静止定位，没有任何效果
+        -- relative相对定位
+        -- absolute绝对定位
+        -- fixed固定定位
+        -- stickly 粘滞定位
+     -->
+    <!-- 
+        绝对定位
+        -当元素开启了positon:absolute则开启了元素的绝对定位
+        绝对定位的特点
+        1.元素开启了绝对定位后，如果不设置偏移量元素 位置！！ 不会发生任何变化（但是元素的性质发生了变化与relative不一样）
+        2.开启绝对定位后，元素会脱离文档流
+        3.元素的级别会被提升（类似于z-index的层级被提升）
+        4.绝对定位的元素行内元素变成块元素，元素的宽度被内容撑开
+        5.绝对定位是相对于其包含块定位
+        包含块（offset）
+        1.文档流中的普通元素的包含块，指的是当前元素的最近的祖先块元素
+        2.绝对定位或者说是脱离文档流的包含块
+            - 开启了定位（static除外）的最近的祖先块元素为包含块
+            - 如果所有祖先元素都没有开启定位，其包含块为根元素
+    -->
+    <div class="box1">
+
+    </div>
+    <div class="box4">
+        <div class="box5">
+            <div class="box2">
+                开启绝对定位
+            </div>
+        </div>
+    </div>
+
+    <div class="box3">
+
+    </div>
+</body>
+<style>
+    .box1 {
+        height: 100px;
+        width: 100px;
+        background-color: antiquewhite;
+    }
+
+    .box2 {
+        height: 100px;
+        width: 100px;
+        background-color: red;
+        /* 开启绝对定位，脱离文档流，box3的位置会向上移动，且box3会被开启了绝对定位的box2覆盖 */
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    .box3 {
+        height: 200px;
+        width: 200px;
+        background-color: green;
+    }
+    .box4{
+        height: 400px;
+        width: 400px;
+        background-color: blueviolet;
+        padding: 10px;
+        position: relative;
+    }
+    .box5{
+        height: 300px;
+        width: 300px;
+        background-color: darkkhaki;
+        
+    }
+</style>
+
+</html>

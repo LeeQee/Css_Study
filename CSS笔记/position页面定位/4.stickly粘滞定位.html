@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>固定定位</title>
+</head>
+
+<body>
+    <!-- 
+        postion的属性值
+        -- static,默认值，静止定位，没有任何效果
+        -- relative相对定位
+        -- absolute固定定位
+        -- fixed固定定位
+        -- stickly 粘滞定位
+     -->
+    <!-- 
+        粘滞定位
+        -当元素开启了positon:stickly则开启了元素的粘滞定位
+        粘滞定位的特点,也是一种特殊的相对定位，大部分特点和相对定位相同
+        不同的是粘滞定位可以在元素到达某个位置时将其固定
+       
+    -->
+    <div class="box1">
+
+    </div>
+    
+</body>
+<style>
+    body{
+        /* 调整网页高度,增加滚动条验证固定定位不会随着网页滚动而变化,是根据视口定位的 */
+        height: 2999px;
+    }
+    .box1 {
+        height: 100px;
+        width: 100px;
+        background-color: antiquewhite;
+        margin-top: 100px;
+        position: sticky;
+        top: 50px;
+    }
+
+    
+    
+</style>
+
+</html>

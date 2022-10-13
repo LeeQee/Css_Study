@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>垂直水平居中</title></title></title>
+</head>
+
+<body>
+    <!-- 
+        postion的属性值
+        -- static,默认值，静止定位，没有任何效果
+        -- relative相对定位
+        -- absolute固定定位
+        -- fixed固定定位
+        -- stickly 粘滞定位
+     -->
+
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+    
+</body>
+<style>
+    .box1 {
+        height: 300px;
+        width: 300px;
+        background-color: antiquewhite;
+        position: relative;
+    }
+
+    .box2 {
+        height: 100px;
+        width: 100px;
+        background-color: aqua;
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        /* 水平布局
+            left + margin-left + border-left + padding-left + width+padding-right + border-right + margin-right + right(box2) = 包含块的宽度box1(开启绝对定位)
+            margin-left + border-left + padding-left + width+padding-right + border-right + margin-right  = 父元素的宽度(文档流中的元素)
+        - 当开启了绝对定位后:
+            水平方向上的布局就需要添加Left和right两个值
+                当发生过度约束(指左边等式相加后不等于右边的值):
+                    当9个值没有auto,则自动调整right值使等式满足
+                    如果有auto,则自动调整auto的值
+            - 可以设置auto的值
+                margin width left right
+            - 由于left和right的默认值是auto,如果不指定这两个值,等式不满足时候,会自动调整这两个值(优先级大于margin)
+        
+        */
+        /* 垂直布局和水平布局一样
+            left + margin-left + border-left + padding-left + width+padding-right + border-right + margin-right + right(box2) = 包含块的宽度box1(开启绝对定位)
+            margin-left + border-left + padding-left + width+padding-right + border-right + margin-right  = 父元素的宽度(文档流中的元素)
+        - 当开启了绝对定位后:
+            水平方向上的布局就需要添加Left和right两个值
+                当发生过度约束(指左边等式相加后不等于右边的值):
+                    当9个值没有auto,则自动调整right值使等式满足
+                    如果有auto,则自动调整auto的值
+            - 可以设置auto的值
+                margin width left right
+            - 由于left和right的默认值是auto,如果不指定这两个值,等式不满足时候,会自动调整这两个值(优先级大于margin)
+        
+        */
+    }
+    
+</style>
+
+</html>
