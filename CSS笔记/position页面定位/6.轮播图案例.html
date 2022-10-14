@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图布局</title>
+    </title>
+    </title>
+</head>
+
+<body>
+    <ul class="image-list">
+        <li><a href="javascript:;"><img src="./images/1.jpg" /></a></li>
+        <li><a href="javascript:;"><img src="./images/2.jpg" /></a></li>
+        <li><a href="javascript:;"><img src="./images/3.jpg" /></a></li>
+        <li><a href="javascript:;"><img src="./images/4.jpg" /></a></li>
+
+        <div class="pointer">
+            <a class="actived" href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+            <a href="javascript:;"></a>
+        </div>
+    </ul>
+
+</body>
+<style>
+    body {
+        margin: auto;
+    }
+
+    ul {
+        margin-block-start: 0em;
+        margin-block-end: 0em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        padding-inline-start: 0px;
+    }
+
+    .image-list {
+        list-style-type: none;
+        position: relative;
+        width: 590px;
+        height: 470px;
+        margin: 100px auto;
+    }
+
+    .image-list li {
+        position: absolute;
+    }
+
+    .image-list li:nth-child(3) {
+        /* js操作元素属性使得层级变高可以切换图片 */
+        z-index: 1;
+    }
+
+    .pointer {
+        position: absolute;
+        z-index: 999;
+        left: 20px;
+        bottom: 20px;
+    }
+
+    .pointer a {
+        /* 设置浮动布局后内联元素会自动变成块元素 */
+        /* display: block; */
+        float: left;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, .5);
+        /* 该属性使得背景颜色只会作用于内容区，边框和内边距不在会有背景色 */
+        background-clip: content-box;
+        border: 2px solid transparent;
+        margin-left: 4px;
+    }
+
+    .pointer a.actived,
+    .pointer a:hover {
+        background-color: rgba(255, 255, 255, .9);
+        border: 2px solid rgba(255, 255, 255, .5);
+    }
+</style>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字体族</title>
+</head>
+
+<body>
+    <p>hello world 你好 世界</p>
+</body>
+<style>
+    html {
+        /* 根元素 */
+        font-size: 10px;
+    }
+
+    /* 如果想使用特殊字体供用户使用，用户主机一般没有该字体的话，可以通过服务器上传字体供用户下载使用
+        - 缺点，注意事项
+         - 用户第一次加载可能会因为网速的原因导致闪屏，字体先是默认的字体最后才会切换到特殊字体
+         - 版权问题
+         - 字体文件格式format('truetype')，有的浏览器无法支持字体文件格式，ttf,woff,woff2....
+    
+    */
+    @font-face {
+        /* 定义字体的名字 */
+        font-family: myfont;
+        /* 字体的文件路径 */
+        src: url(./font/汉仪长美黑简.ttf)format('truetype');
+    }
+
+    p {
+        color: black;
+        /* font-size
+            - em 当前元素的一个font-size(20em相当于当前p元素的字体font-size是16px，则20em为20*16px=320px宽度)
+            - rem相当于根元素的一个font-size (20em相当于根元素的字体font-size是10px，则20em为20*10px=200px宽度)
+        */
+        width: 20rem;
+        font-size: 16px;
+        background-color: aqua;
+        /* font-family
+            - 'Courier New', Courier, monospace===>建议用户先使用'Courier New'，如果浏览器发现用户字体库无该字体，再使用Courier，最后使用monospace
+            - 字体类型
+                - serif 衬线字体类型，这种字体类型有顿笔下划线在字体笔画结束的地方
+                - sans-serif 非衬线字体，正常字体，笔画结束无顿笔下划线
+                - monospace 等宽字体，比如英文的L和i正常情况下字体的宽度不一致，占用的空间不一样，使用等宽字体字符的宽度是一样的
+        */
+        font-family: myfont, 'Courier New', Courier, monospace;
+    }
+</style>
+
+</html>

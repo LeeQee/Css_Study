@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图标字体</title>
+    <link rel="stylesheet" href="./icon/css/all.css">
+</head>
+
+<body>
+    <!-- 开发过程中使用一些小的图标，如果都采用图片的话会导致文件过多占用他空间
+    有的图片较大还会加载慢。并且图片有限制，无法像字体一样随意调整大小颜色等
+    这时候可以考虑一直图标字体，将图标转换成字体进行引用 -->
+    <!-- 
+        使用方法
+        1.下载地址https://fontawesome.com/download（下载web版本）
+        2.将解压的文件复制到项目中
+        3.参考官方文档选择想使用的图标将对应的class类名填上即可（https://fontawesome.com/icons/magnifying-glass?s=solid&f=sharp）
+
+     -->
+    <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+
+    <!--  -->
+    <ul class="icon-list">
+        <li>待到秋来九月八</li>
+        <li>我花开时百花杀</li>
+        <li>冲天香阵透长安</li>
+        <li>满城尽带黄金甲</li>
+    </ul>
+</body>
+<style>
+    .icon-list {
+        list-style: none;
+    }
+
+    /* 设置列表图标时候，利用伪类
+        1.先找到图标的编码f002设置为content内容
+        2.在去all.css文件中找到该图标所属的字体font-family
+    */
+    .icon-list li::before {
+        content: '\f002';
+        /* font-family: 'Font Awesome 5 Brands';
+        font-family: 'Font Awesome 6 Brands';
+        font-family: 'Font Awesome 5 Brands'; */
+        font-family: 'Font Awesome 6 Free';
+        color: brown;
+        /* 找到对应的CSS样式 */
+        font-weight: 900;
+    }
+</style>
+
+</html>
