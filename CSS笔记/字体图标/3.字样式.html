@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字体样式属性</title>
+    <link rel="stylesheet" href="./icon/css/all.css">
+</head>
+
+<body>
+    <p>
+        Goox <span class="cz">morning</span>. I am glad to be here for this interview. First let me introduce myself. My
+        name is Youtheme, 24. I
+        come
+        from GuangZhou,the capital of GuangDong Province. I graduated from the xx** department of xx*University in July
+        ,2001.In
+        the past two years I have been prepareing for the postgraduate examination while I have been teaching xx*in
+        NO.xxmiddle
+        School and I was a head-teacher of a class in junior grade two.Now all my hard work has got a result since I
+        have a
+        chance to be interview by you.
+
+    </p>
+
+
+
+</body>
+<style>
+    p {
+        /* 行高
+            - 指元素文本所占行的高度
+            - 如果元素的font-size为20px,line-height为40px，则上下边距为(40px-20px)/2=10px
+            - 行高可以为40px这种具体高度单位，也可以为整数。整数值的时候则代表着为font-size的倍数
+        */
+        /* line-height: 40px; */
+        /* font-size: 20px;
+        font-family: 'Courier New', Courier, monospace; */
+        /* 简写形式
+            - font-size和font-family必须写
+            - 其他属性不写则为默认值，如normal
+            - 如果不写行高，即使上面写了Line-height也会被覆盖为Normal使之不生效
+        */
+        font: bold 40px/2 'Courier New', Courier, monospace;
+        /* 水平对齐
+            - text-align
+                - right
+                - left
+                - center
+                - justify
+        */
+        text-align: left;
+        /* 文字超出隐藏
+            - 设置宽度
+            - 禁止换行
+            - 内容溢出隐藏
+            - 溢出部分省略号显示
+        */
+        width: 300px;
+        /* white-space属性
+            - normal,默认值，忽略多余空白只保留一个
+            - pre,保留所有空白
+            - nowrap,保留一个空白，不换行从，直到遇到br标签
+            - pre-wrap,保留所有空白，正常换行
+            - pre-line,合并空白符序列，保留换行符
+            - inherit,从父元素继承属性
+        */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        border: 1px solid red;
+    }
+
+    .cz {
+        font-size: 20px;
+        /* 垂直布局vertical-align
+            - baseline，默认值，基线对齐
+            - top
+            - bottom 
+            - middle,水平线和x的中线交叉点对齐
+        */
+        vertical-align: middle;
+    }
+</style>
+
+</html>
