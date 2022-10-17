@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>背景图片属性</title>
+</head>
+
+<body>
+    <div class="back">
+        <!-- <div class="child">
+            背景图片内容不随滚动条滚动而滚动背景图片内容不随滚动条滚动而滚动背景图片内容不随滚动条滚动而滚动背景图片内容不
+            随滚动条滚动而滚动背景图片内容不随滚动条滚动而滚动背景图片内容不随滚动条滚动而滚动背景图片内容不随
+            滚动条滚动而滚动背景图片内容不随滚动条滚动而滚动背景图片内容不随滚动条滚动而滚动背景图片内容不随滚动
+            条滚动而滚动背景图片内容不随滚动条滚动而滚动背景图片内容不随滚动条滚动而滚动背景图片内容不随
+            滚动条滚动而滚动背景图片内容不随滚动条滚动而滚动背景图片内容不随滚动条滚动而滚动背景图片内容不随滚动条
+            滚动而滚动背景图片内容不随滚动条滚动而滚动背景图片内容不随滚动条滚动而滚动
+        </div> -->
+    </div>
+    <style>
+        .back {
+            width: 500px;
+            height: 500px;
+            background-color: greenyellow;
+            background-image: url(../../statics/images/2.jpg);
+            /* background-repeat图片重复方式
+                - repeat 默认
+                - repeat-x 横向重复
+                - repeat-y 纵向重复
+                - no-repeat 不重复
+            */
+            background-repeat: no-repeat;
+            /* background-position图片位置
+                - top,left,right,center,bottom九宫格，
+                    只填写一个，第二个默认center
+                - 也可以像素10px 20px
+            */
+            /* background-position: center center; */
+
+            /* background-size 图片尺寸
+                - auto 默认值原尺寸展现图片
+                - cover 保持图片比例，铺满整个容器，但是有可能图片展示不全
+                - contain 保持图片比例，完整展示图片内容，但是有可能无法铺满容器
+                - 也可以自定义大小500px auto
+            */
+            background-size:cover;
+            overflow: auto;
+            padding: 30px;
+            border: 20px double red;
+            /* background-clip背景图片应用区域
+                - border-box，默认值，应用到外边框、内容区域和内边框区域
+                - padding-box,应用到内容区域和内边框区域
+                - content-box，应用到内容区域
+            
+            */
+            /* background-clip:content-box; */
+            /* background-origin图片原点计算位置，该属性受background-position属性影响
+                - padding-box,默认值，从内边距区域开始计算
+                - border-box,从外边框开始计算原点
+                - content-box,从内容去开始计算
+            
+            */
+            background-origin: content-box;
+
+        }
+
+        .child {
+            height: 200px;
+            width: 200px;
+            background-image: url(../../statics/images/1.jpg);
+            background-repeat: no-repeat;
+            /* background-attachment 用来确定背景图片相对于视口是固定的还是随着包含他的区块滚动
+                - fixed,背景相对于视口是固定的，即使一个元素具有滚动机制，背景也不会随着元素的内容滚动
+                - scroll 背景相对于元素本身是固定的，不会随着他的内容滚动（即在当前child内滚动，背景是固定的）
+                - local 背景相对于内容是固定的，当内容发生滚动的时候，背景也会随之滚动
+            */
+            background-attachment: fixed;
+            overflow: auto;
+        }
+    </style>
+</body>
+
+</html>
