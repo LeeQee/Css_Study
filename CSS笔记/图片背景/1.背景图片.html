@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>背景图片</title>
+</head>
+
+<body>
+    <div class="back">
+
+    </div>
+    <style>
+        .back {
+            width: 500px;
+            height: 500px;
+            background-color: aqua;
+            background-image: url(../../statics/images/1.jpg);
+            /* background-repeat图片重复方式
+                - repeat 默认
+                - repeat-x 横向重复
+                - repeat-y 纵向重复
+                - no-repeat 不重复
+            */
+            background-repeat: no-repeat;
+            /* background-position图片位置
+                - top,left,right,center,bottom九宫格，
+                    只填写一个，第二个默认center
+                - 也可以像素10px 20px
+            */
+            background-position: center center;
+        }
+
+        .child {}
+    </style>
+</body>
+
+</html>
