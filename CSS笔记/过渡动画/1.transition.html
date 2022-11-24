@@ -14,15 +14,33 @@
     </div>
     <style>
         .box1 {
-            width: 800px;
-            height: 800px;
+            width: 300px;
+            height: 300px;
             background-color: grey;
         }
 
         .box1 div {
             width: 100px;
             height: 100px;
-            transition: all 0.3s
+
+            /* transition: all 0.3s */
+            /* transition 属性
+                - transition-property
+                - transition-duration
+                - transition-timing-function
+                - transition-delay
+            */
+            /* - transition-property
+                指定支持过渡的属性，大部分属性都支持，多个属性用逗号分隔
+                如果指定所有属性都是过渡效果用all
+                属性值必须是一个可以计算的有效值，比如px，0，颜色。如果是auto则无法实现过渡效果
+                该属性必须和transition-duration配合使用才有效果
+            */
+            transition-property: width, height, background-color;
+            /* - transition-duration 
+                指定过渡效果的持续时间
+            */
+            transition-duration: 3s;
         }
 
         .box2 {
@@ -32,7 +50,7 @@
         .box1:hover .box2 {
             width: 200px;
             height: 200px;
-
+            background-color: rgb(255, 170, 242);
         }
     </style>
 </body>
