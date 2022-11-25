@@ -11,11 +11,12 @@
 <body>
     <div class="box1">
         <div class="box2"></div>
+        <div class="box3"></div>
     </div>
     <style>
         .box1 {
-            width: 300px;
-            height: 300px;
+            width: 800px;
+            height: 800px;
             background-color: grey;
         }
 
@@ -36,20 +37,58 @@
                 属性值必须是一个可以计算的有效值，比如px，0，颜色。如果是auto则无法实现过渡效果
                 该属性必须和transition-duration配合使用才有效果
             */
-            transition-property: width, height, background-color;
+            transition-property: width, height, background-color, margin-left;
             /* - transition-duration 
                 指定过渡效果的持续时间
+                单位s或者ms
+                可以分别指定时间，多个时间对应多个属性用逗号分隔
             */
             transition-duration: 3s;
+
+            /* - transition-timing-function
+                过渡动画的时序函数,有如下属性，
+                - ease 慢速开始，先加速，再减速
+                - ease-in 加速运动
+                - ease-out 减速运动
+                - ease-in-out 先加速后减速
+                - linear 线性匀速
+                - cubic-bezier() 基于贝塞尔曲线 ,https://cubic-bezier.com/
+                - steps(3，end),分步执行，两个参数
+                    - 第一个参数代表分几步执行
+                    - 第二个参数代表是开始时执行还是结束时候执行，end是默认值，可选start
+            */
+
+            /* - transition-delay
+                延迟几秒执行
+            */
+            transition-delay: 1s;
+            /* transition可以写所有属性，没有顺序要求，唯一特殊的地方就是如果有两个时间第一个时间是持续时间，第二个是延迟时间 */
         }
 
         .box2 {
             background-color: #bfa;
+            margin-left: 0;
+            transition-timing-function: ease;
         }
 
         .box1:hover .box2 {
-            width: 200px;
-            height: 200px;
+            margin-left: 700px;
+            /* width: 200px;
+            height: 200px; */
+            background-color: rgb(255, 170, 242);
+        }
+
+        .box3 {
+            background-color: #bfa;
+            margin-left: 0;
+            margin-top: 100px;
+            transition-timing-function: linear;
+        }
+
+        .box1:hover .box3 {
+            margin-left: 700px;
+            /* width: 200px;
+            height: 200px; */
             background-color: rgb(255, 170, 242);
         }
     </style>
