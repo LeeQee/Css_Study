@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z轴平移</title>
+</head>
+
+<body>
+    <div class="box1">
+
+    </div>
+    <style>
+        html {
+            perspective: 800px;
+        }
+
+        body {
+            background-color: ivory;
+            border: 1px solid red;
+            perspective: 800px;
+        }
+
+
+
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+            margin: 0 auto;
+            margin-top: 100px;
+            /* transform:变形平移，多个属性空格分隔,变形平移不会影响其他元素布局
+                - translateZ ，Z轴平移，调整元素在Z轴的位置，正常情况就是调整元素和人眼之间的距离
+                    距离越大，元素离人越近
+                Z轴平移属于立体效果（近大远小），默认情况下浏览器是不支持透视的，如果需要看见这种效果，必须设置网页的视距
+            */
+        }
+
+        body:hover .box1 {
+            transform: translateZ(100px);
+        }
+    </style>
+</body>
+
+</html>

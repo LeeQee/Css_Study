@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旋转</title>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <style>
+        html {
+            /* 开启透视 */
+            perspective: 800px;
+        }
+
+        body {
+            perspective: 800px;
+        }
+
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: #bfc;
+            margin: 0 auto;
+            margin-top: 200px;
+            transition: 2s;
+            background-image: url(./mitu.png);
+        }
+
+        .box1:hover {
+            /* 通过旋转可以使元素沿着x,y,z轴旋转指定的角度
+                - rotateX
+                - rotateY
+                - rotateZ
+                单位：turn 、 deg 360deg=1turn
+            */
+            /* transform: rotateX(90deg); */
+            /* transform: rotateX(0.25turn); */
+            transform: rotateY(180deg);
+            /* transform: rotateY(180deg) translateZ(400px); */
+            /* transform: translateZ(400px) rotateY(180deg); */
+            /* backface-visibility：背面是否可见
+                - visible，默认值
+                -hideen,隐藏。可以用来做扑克牌翻牌
+            */
+            backface-visibility: hidden;
+        }
+    </style>
+</body>
+
+</html>

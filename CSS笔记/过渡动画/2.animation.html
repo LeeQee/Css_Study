@@ -22,12 +22,45 @@
         .box2 {
             width: 100px;
             height: 100px;
+            margin-left: 100px;
             background-color: #bfa;
             /* 设置Box2动画 */
             /* animation-name：要对当前元素生效的关键帧的名字 */
             animation-name: test;
             /* animation-duration：动画的执行时间 */
             animation-duration: 2s;
+            /*  animation-delay:动画延迟执行时间 */
+            animation-delay: 3s;
+            /* animation-timing-function:动画的时序函数 */
+            animation-timing-function: linear;
+            /* animation-iteration-count:动画执行次数
+                count:次数
+                infinite:无限次
+            */
+            animation-iteration-count: 1;
+            /* animation-direction:动画的执行方向
+                - normal，默认值,from-to
+                - reverse,to-from
+                - alternate,from-to-from
+                -  alternate-reverse,to-from-to
+            */
+            animation-direction: from-to;
+            /* animation-play-state:动画的执行状态
+                - running，默认值
+                - pause,暂停
+            */
+            animation-play-state: running;
+            /* animation-fill-mode:动画的填充模式
+                - none,默认值
+                - forwards,停留在动画的结束位置
+                - backwards,在动画延迟等待的时候，元素就会处于开始状态
+                - both,结合forwards和backwards
+            */
+            animation-fill-mode: both;
+        }
+
+        .box1:hover .box2 {
+            animation-play-state: paused;
         }
 
         /* 动画
@@ -41,11 +74,13 @@
 
         @keyframes test {
             to {
-                margin-left: 700px;
+                margin-left: 600px;
+                background-color: red;
             }
 
             from {
                 margin-left: 0;
+                background-color: orange;
             }
         }
     </style>
