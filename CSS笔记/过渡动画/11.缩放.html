@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>缩放</title>
+</head>
+
+<body>
+    <div class="box1">
+        <img src="./images/2.jpeg" />
+    </div>
+    <style>
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            margin: 100px auto;
+            transition: 2s;
+            overflow: hidden;
+        }
+
+        img {
+            transition: .2s;
+            /* 缩放的原点 */
+            transform-origin: bottom;
+        }
+
+        .box1:hover img {
+            /* 缩放transform
+                - scaleX
+                - scaleY
+                - scaleZ，只有在立体效果的元素中可以展示出效果，比如魔方。因为他只是拉长Z轴对于二维平面拉长Z轴没有特殊效果
+                - scale
+            */
+
+            /* transition */
+            transform: scale(1.2);
+        }
+    </style>
+</body>
+
+</html>
