@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>钟表</title>
+</head>
+
+<body>
+    <div class="clock">
+        <div class="sec">
+            <div class="secline"></div>
+        </div>
+        <div class="minute">
+            <div class="minuteline"></div>
+        </div>
+        <div class="hour">
+            <div class="hourline"></div>
+        </div>
+    </div>
+    <style>
+        body {
+            perspective: 800px;
+        }
+
+        .clock {
+            width: 368px;
+            height: 344px;
+            background-image: url(./clock.png);
+            margin: 0 auto;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .clock>div {
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        .sec {
+            width: 81%;
+            height: 81%;
+            animation: run 60s steps(60) infinite;
+            position: absolute;
+
+        }
+
+        .secline {
+            width: 4px;
+            height: 50%;
+            margin: 0 auto;
+            background-color: red;
+        }
+
+        .minute {
+            width: 71%;
+            height: 71%;
+            animation: run 3600s steps(60) infinite;
+            position: absolute;
+        }
+
+        .minuteline {
+            width: 3px;
+            height: 50%;
+            margin: 0 auto;
+            background-color: green;
+
+        }
+
+        .hour {
+            width: 61%;
+            height: 61%;
+            animation: run 86400s steps(60) infinite;
+            position: absolute;
+        }
+
+        .hourline {
+            width: 1px;
+            height: 50%;
+            margin: 0 auto;
+            background-color: black;
+
+        }
+
+
+        @keyframes run {
+            from {
+                transform: rotateZ(0);
+            }
+
+            to {
+                transform: rotateZ(360deg);
+            }
+        }
+    </style>
+</body>
+
+</html>

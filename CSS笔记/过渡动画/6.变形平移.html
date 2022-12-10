@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>变形平移transform</title>
+</head>
+
+<body>
+    <!-- <div class="box1">
+
+    </div>
+    <div class="box2">
+
+    </div> -->
+    <div class="box3">没有具体高度宽度大小的div</div>
+    <div class="box4"></div>
+    <style>
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+            margin: 0 auto;
+            margin-top: 200px;
+            /* transform:变形平移，多个属性空格分隔,变形平移不会影响其他元素布局
+                - translateX,单位px或者百分比，如果是百分比则基于元素本身的长度宽度进行计算
+                - translateY
+                - translateZ
+            */
+            transform: translateX(50%) translateY(50%);
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            margin: 0 auto;
+        }
+
+        .box3 {
+            background-color: antiquewhite;
+            /* height: 50px;
+            width: 200px; */
+            /* 有固定大小的div居中布局 */
+            /* position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto; */
+            /* 没有固定大小 */
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        .box4 {
+            width: 100px;
+            height: 100px;
+            background-color: aliceblue;
+
+            margin-top: 100px;
+            margin-left: 100px;
+            transition: all 1s;
+        }
+
+        .box4:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+        }
+    </style>
+</body>
+
+</html>

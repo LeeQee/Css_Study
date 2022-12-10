@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>奔跑的少年</title>
+</head>
+
+<body>
+    <div class="box1">
+
+    </div>
+    <style>
+        .box1 {
+            margin: 0 auto;
+            width: 50px;
+            height: 168px;
+            background-image: url(./images.jpg);
+            background-position: 0 0;
+            transition: background-position 0.3s steps(3);
+            border: 1px solid #ddd;
+            cursor: pointer;
+            animation-name: runboy;
+            animation-duration: 0.3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: steps(5);
+        }
+
+
+        @keyframes runboy {
+            from {
+                background-position: 0 0;
+            }
+
+            to {
+                background-position: 250px 0;
+            }
+        }
+    </style>
+</body>
+
+</html>
