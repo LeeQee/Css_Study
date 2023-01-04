@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组方法</title>
+</head>
+
+<body>
+    <script>
+        /**
+         * length
+         * 遍历数组
+         * slice
+         * concat
+         * at
+         * Object.assign
+         * indexOf
+         * lastIndexOf
+         * push
+         * pop
+         * shift
+         * unshift
+         * **/
+        const arr = [2, 3, 3, 3, 4, 1, 2, 3, 4, 6, 4, 5, 7, 5, 6, 6, 6, 1, 1, 1]
+        // 数组去重
+        // 第一种
+        // const arr1 = []
+        // for (ele of arr) {
+        //     if (arr1.indexOf(ele) === -1) {
+        //         arr1.push(ele)
+        //     }
+        // }
+        // // 第二种
+        // for (let i = 0; i < arr.length; i++) {
+        //     for (let j = i + 1; j < arr.length; j++) {
+        //         if (arr[i] === arr[j]) {
+        //             arr.splice(j, 1)
+        //             j--
+        //         }
+        //     }
+        // }
+        // 第三种
+        // console.log(arr)
+        for (let i = 0; i < arr.length; i++) {
+            // console.log('i==>',i,'===>', arr[i])
+            let index = arr.indexOf(arr[i], i + 1)
+            if (index !== -1) {
+                arr.splice(index, 1)
+                i--
+            }
+        }
+        console.log(arr)
+
+
+    </script>
+</body>
+
+</html>

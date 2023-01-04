@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拷贝方式</title>
+</head>
+
+<body>
+    <script>
+        const arr = [{ name: 'java' }, { name: 'vue' }]
+        const arr1 = [1, 2, 3, 4]
+        // 浅拷贝shallow copy
+        // const copyArr = arr.slice();
+        // copyArr[0].name = 'C++'
+        // copyArr[2] = { name: 'python' }
+        // const copyArr1 = [...arr1];
+        // copyArr1[0] = 'aaa'
+        // const copyArr2 = arr.concat()
+        // const copyArr3 = arr1
+        // copyArr3[0] = 'bbb'
+        // console.log(arr);
+        // console.log(copyArr);
+
+        // 深拷贝
+        // const deepArr = structuredClone(arr)
+        // deepArr[0].name='sdas'
+        // console.log(arr);
+        // console.log(deepArr)
+
+        // 对象的浅拷贝
+        const obj = {
+            name: 'leon',
+            age: 28,
+            sex: 'man',
+            info: {
+                skills: 'java',
+                class: '开发'
+            }
+        }
+        // const copyObj = Object.assign({}, obj)
+        // copyObj.info.skills = 'vue'
+        // console.log(obj.info === copyObj.info);
+        // 对象的深拷贝
+        const copyObj2 = structuredClone(obj)
+        copyObj2.info.skills = 'jquery'
+        console.log(obj);
+        console.log(copyObj2)
+    </script>
+</body>
+
+</html>
