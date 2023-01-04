@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+     <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+     </ul>
+     
+     <style>
+        ul{
+            border: 1px solid red;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        li{
+            width: 100px;
+            height: 200px;
+            /* flex-grow: 1;
+            flex-shrink: 1; */
+            /* flex-basis:弹性元素的主轴方向上的长度，如果有值，则优先级高于width、height */
+            /* flex-basis: 50px; */
+            /* flex:通用写法
+                flex:flex-grow flex-shrink flex-basis
+                可选值：
+                    - initial,0 1 auto 元素可缩不可伸
+                    - auto,1 1 auto 元素可伸缩
+                    - none,0 0 auto 元素没有弹性
+
+            */
+            flex:initial
+        }
+        li:first-child{
+            background-color: antiquewhite;
+            /* order:设置元素沿着主轴方向的排列顺序 */
+            order: 3;
+        }
+        li:nth-child(2){
+            background-color: aqua;
+            order: 2;
+        }
+        li:nth-child(3){
+            background-color: blue;
+            order:1;
+        }
+        
+        
+     </style>
+</body>
+</html>

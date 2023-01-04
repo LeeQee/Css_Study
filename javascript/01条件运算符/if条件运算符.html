@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="test">
+11131231231231231
+    </h1>
+    <h2>sadasdasd</h2>
+    <script>
+        const Person = (function(){
+            console.log('Person==>',this)
+            function Person(name,age){
+                this.name=name;
+                this.age=age;
+                // this.sayHello=()=>{
+                //     console.log(this)
+                // }
+            }
+            Person.prototype.pro1=function(){
+                console.log('我是原型函数对象this==>',this)
+            }
+            Person.prototype.pro2=()=>{
+                console.log('我是原型箭头对象this==>',this)
+            }
+            Person.staticName='静态属性'
+            Person.staticMethod=function(){
+                console.log('静态方法this==>',this)
+            }
+            Person.staticArrowMethod=()=>{
+                console.log('静态箭头方法this==>',this)
+            }
+            return Person
+        })()
+        
+        // Person.staticMethod.sayHello=function(){
+        //     console.log('this==>',this)
+        // }
+        const p1 = new Person('leon',18)
+        console.log(p1)
+        p1.pro1()//p1,函数调用，谁调用指向谁
+        p1.pro2()//window，箭头函数，作用域链，定义pro2的外部作用域是window，指向window
+        Person.staticMethod()//person
+        Person.staticArrowMethod()//window
+        // p1.sayHello()
+    </script>
+</body>
+</html>

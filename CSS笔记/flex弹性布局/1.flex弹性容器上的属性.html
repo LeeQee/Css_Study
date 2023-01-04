@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        flex:弹性盒，伸缩盒
+            - css的一种布局手段，主要用来替代浮动来完成页面的布局
+            - flex可以使得元素更具有弹性，让元素可以跟随页面大小的改变而改变
+        弹性容器
+            - 要使用弹性盒，必须将一个元素设置为弹性容器
+            - 通过display:来设置弹性容器
+                - display:flex 设置为块级弹性容器
+                - display:inline-flex 设置为行内的弹性容器
+        弹性元素
+            - 弹性容器的直接子元素才是弹性元素
+            - 一个元素可以是弹性容器的同时也是弹性元素
+     -->
+
+     <div class="box1">
+        <div class="box2">
+            <h1>1</h1>
+        </div>
+        <div class="box3">
+            <h1>2</h1>
+            <h1>2</h1>
+        </div>
+        <div class="box4">
+            <h1>3</h1>
+            <h1>3</h1>
+            <h1>3</h1>
+        </div>
+        <div class="box5">
+            <h1>4</h1>
+            <h1>4</h1>
+            <h1>4</h1>
+            <h1>4</h1>
+        </div>
+        <div class="box6">
+            <h1>5</h1>
+            <h1>5</h1>
+            <h1>5</h1>
+            <h1>5</h1>
+            <h1>5</h1>
+            <h1>5</h1>
+        </div>
+     </div>
+     
+     <style>
+        .box1{
+            width:600px;
+            height: 800px;
+            border: 1px solid red;
+            display: flex;
+            /* flex-direction   指定容器中弹性元素的排列方式
+                -   row,默认值，水平方向从左到右（主轴方向）
+                -   row-reverse,水平方向从右到左
+                -   column,垂直方向从上到下
+                -   column,垂直方向从下到上
+            主轴方向：弹性元素的排列方向，由flex-direction决定
+            侧轴:与主轴方向垂直的就是侧轴
+            */
+            /* flex-direction: row; */
+            /* justify-content:如何分配主轴上的空白空间 （主轴上的元素如何排列）
+                可选值：
+                    - flex-start,沿着主轴的起始边排列
+                    - flex-end,沿着主轴的终止边开始排列
+                    - center,居中排列，空白空间在主轴两侧
+                    - space-around,空白分布元素两侧（大概就是50，100，100，50）
+                    - space-evenly,每个元素间的空白相等（大概就是50，50，50，50）
+                    - space-between,空白分布在元素中间
+
+            */
+            /* justify-content:space-between; */
+            /* flex-wrap:弹性元素的换行方式 
+                可选值：
+                    - nowrap:,默认值不换行
+                    - wrap,沿着辅轴换行
+                    - wrap-reverse，沿着辅轴反方向换行
+
+            */
+            /* flex-wrap:wrap; */
+            /* flex-flow: flex-direction和flex-wrap结合体*/
+            flex-flow:row wrap;
+            /* align-items: 元素在辅轴上如何对齐
+                - stretch,默认值，将元素的长度设置为相同的值（每一行内的元素高度一致）
+                - flex-start,元素不会拉伸，沿着辅轴起边对齐
+                - flex-end,元素不会拉伸，沿着辅轴终边对齐
+                - center,居中对齐
+                - base-line,基线对齐
+            */
+            align-items: center;
+            /* align-content:空白空间在辅轴上如何排列
+                可选值和justify-content一致    
+            */
+            align-content: space-between;
+                
+
+        }
+        .box1 div{
+            /* 
+                flex-grow:指定弹性元素的伸展系数
+                - 当父元素有多余空间的时候，子元素如何伸缩
+                - 父元素的剩余空间，会按照比例伸缩
+            */
+            /* flex-grow:1; */
+            /* 
+                flex-shirk:指定弹性元素的收缩系数
+                flex-shrink:1;默认设置
+            */
+            flex-shrink:1;
+        }
+        .box2{
+            width: 200px;
+            /* height: 100px; */
+            background-color: aqua;
+            /* flex-grow:1; */
+            /* align-self:覆盖父元素的align-items属性，单独适用自己 */
+            align-self: stretch;
+        }
+        .box3{
+            width: 200px;
+            /* height: 100px; */
+            background-color: yellow;
+            /* flex-grow:2; */
+        }
+        .box4{
+            width: 200px;
+            /* height: 100px; */
+            background-color: green;
+            /* flex-grow:3; */
+        }
+        .box5{
+            width: 200px;
+            /* height: 100px; */
+            background-color: #bfa;
+            /* flex-grow:2; */
+        }
+        .box6{
+            width: 200px;
+            /* height: 100px; */
+            background-color: purple;
+            /* flex-grow:3; */
+        }
+        
+        
+     </style>
+</body>
+</html>
