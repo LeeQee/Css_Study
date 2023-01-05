@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>闭包</title>
+</head>
+
+<body>
+    <script>
+        /**
+         * 闭包的概念：一个能访问外部函数作用域变量的并将自己作为返回值的函数称为闭包
+         * 什么时候使用闭包：当我们需要隐藏一些不需要被别人访问的内容时就可以使用闭包
+         * 闭包三要素：
+         *  - 函数的嵌套
+         *  - 内部函数要引用外部函数中的变量
+         *  - 内部函数要作为返回值返回
+         * 闭包的原理：
+         *  -   函数的作用域：在函数创建的时候就已经确定的（词法作用域），和函数调用的位置无关
+         * 闭包的生命周期：
+         *  - 1.闭包在外部函数调用时产生，外部函数每次调用都会产生一个新的闭包
+         *  - 2.在内部函数丢失时销毁(内部函数被垃圾回收了，才会消失)
+         * 注意事项：闭包主要用来隐藏一些希望不被外部访问的内容，
+         *  这就意味着闭包需要占用一定的内存空间，每次调用外部函数的时候都会创建一个新的闭包，会开辟一个新的内存空间
+         * 相较于类来说，闭包比较浪费内存空间，（类可以使用原型对象而闭包不可以）
+         * - 需要执行次数少的时候使用闭包
+         * - 需要大量创建实例的时候，使用类
+         * **/
+        let count = 3;
+        function outer() {
+            let count = 0;
+            return () => {
+                count++
+                return count
+            }
+        }
+        let count1 = outer()
+        count1()
+        count1()
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原型对象</title>
+</head>
+
+<body>
+    <script>
+        class Person {
+            #name
+            #age
+            constructor(name, age) {
+                this.#name = name;
+                this.#age = age;
+            }
+            set name(val) {
+                this.#name = val
+            }
+            get name() {
+                return this.#name
+            }
+            static country = '中华人民共和国'
+            static getCountry = () => {
+                // 静态方法没有this,不能访问非静态属性和非静态方法
+                console.log(`国家是${this.country}`)
+            }
+            sleep(val) {
+                console.log(`${this.name}睡了${val}小时`)
+            }
+            work = (val) => {
+                console.log(`${this.name}工作赚了${val}元钱`)
+            }
+        }
+        const p1 = new Person('tom', 18)
+        Person.getCountry()
+        console.log(p1)
+        let obj = Object.getPrototypeOf(p1)
+        console.log(obj)
+        obj.sex = 'man'
+        console.log(p1.__proto__)
+    </script>
+</body>
+
+</html>

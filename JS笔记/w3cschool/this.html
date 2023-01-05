@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this指向问题</title>
+</head>
+
+<body>
+    <script>
+        /**
+         * call,apply,bind
+         * 根据函数的调用不同，this的指向也不同
+         *  - 1.以函数的形式调用，this指向window
+         *  - 2.以方法的形式调用，this指向调用方法的对象
+         *  - 3.构造函数中，this是调用方法的对象
+         *  - 4.箭头函数没有自己的this，由外层作用域决定
+         *      - 无法通过call,apply,bind修改this指向
+         *      - 箭头函数没有arguments
+         *  - 5.通过call和apply调用的函数，第一个参数就是他的this指向
+         *  - 6.bind()是函数的方法，可以用来创建一个新的函数，this由bind的第一个参数决定，后面参数为函数的形参绑定值
+         *      - bind绑定的this和形参绑定值都无法修改
+         * **/
+        // 1.函数形式调用，this指向window
+        // function funThis() {
+        //     console.log('函数形式调用==>', this)
+        // }
+        // funThis()
+        // // 2.方法形式调用，this指向调用方法的对象
+        // const obj = {
+        //     name: '对象',
+        //     say() {
+        //         console.log('方法形式调用==>', this)
+        //     },
+        //     sleep: () => {
+        //         console.log('箭头函数作用域==>', this)
+        //     }
+        // }
+        // obj.say()
+        // obj.sleep()
+        // 3.构造函数中，this是调用方法的对象
+        // function Person(name, age) {
+        //     this.name = name;
+        //     this.age = age;
+        //     this.say = function () {
+        //         console.log('函数形式的类的构造函数==>', this)
+        //     }
+        //     this.sleep = () => {
+        //         console.log('箭头函数作用域==>', this)
+        //     }
+        // }
+        // const p1 = new Person('leon', 22)
+        // const p2 = new Person('jack', 13)
+        // p1.say()
+        // p1.sleep()
+        // 4.箭头函数没有自己this,它的this由外层作用域决定
+        /**
+         * call和apply调用函数第一个参数就是this的指向
+         * call参数以逗号分隔
+         * apply参数以数组分隔
+         * bind
+         * **/
+        // var name = '哈士奇'
+        // const dog = {
+        //     name: '泰迪'
+        // }
+        // function eat(val, a) {
+        //     console.log(this)
+        //     console.log(val)
+        //     console.log(a)
+        // }
+        // eat.call(dog, 1, 2)
+        // eat.apply(dog, [3, 4])
+        // const cat = {
+        //     name: 'tom'
+        // }
+        // function test() {
+        //     let name = '我是test哈哈哈哈'
+        //     console.log(this)
+        // }
+        // const copy = test.bind(cat)
+        // test()
+        // copy()
+    </script>
+</body>
+
+</html>

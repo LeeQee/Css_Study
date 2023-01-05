@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>类</title>
+</head>
+
+<body>
+    <script>
+        class Person {
+            #name = '';
+            #age = '';
+            constructor(name, age) {
+                this.#name = name
+                this.#age = age
+            }
+            work = () => {
+                console.log(`${this.#name}在工作`)
+            };
+            static conutry = '中国'
+            static say() {
+                console.log('中文')
+            }
+            sleep() {
+                console.log(`${this.#name}在睡觉`)
+            }
+            set name(name) {
+                this.#name = name
+            }
+            get name() {
+                return this.#name
+            }
+        }
+        const p1 = new Person('leon', 12)
+        Person.say()
+        p1.sleep()
+        console.log(p1.__proto__)
+
+    </script>
+</body>
+
+</html>
