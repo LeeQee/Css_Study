@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>重载</h1>
+    <h1 id=""></h1>
+    <script>
+        // 试一下
+        // Object.hasOwn()
+        // for of
+        // for in
+        const findAll=()=>{
+            console.log('寻找所有用户')
+        }
+        const findByName=(name)=>{
+            console.log('根据姓名寻找用户==>',name)
+        }
+        const findByIdAndName=(id,name)=>{
+            console.log('根据id和姓名寻找用户==>',id,name)
+        }
+        // const utils = {findAll,findByName,findByIdAndName}
+        // utils.findAll()
+        // utils.findByName('jack')
+        // utils.findByIdAndName(1231,'leon')
+        // 重载实现
+        function addMethods(obj,name,fn){
+            // console.log('obj==>',obj)
+            // console.log('name==>',name)
+            // console.log('fn==>',fn)
+            
+            // 第一次进来找不到对应的属性，所以old为undefined
+            const  old = obj[name];
+            obj[name]=function(...args){
+                console.log(args)
+                if(args.length===fn.length){
+                    return fn.apply(this,args)
+                }else if(typeof old==='function'){
+                    return old.apply(this.args)
+                }
+            }
+        }
+        const utils = {
+            name:'工具类'
+        }
+        // addMethods(utils,'find',()=>{
+        //     console.log('寻找所有用户')
+        // })
+        addMethods(utils,'find',(name)=>{
+            console.log('根据姓名寻找用户==>',name)
+        })
+        console.log(utils.find)
+    </script>
+</body>
+</html>
