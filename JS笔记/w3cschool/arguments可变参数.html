@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>可变参数</title>
+</head>
+
+<body>
+    <script>
+        /**
+         * 可变参数
+         * arguments:arguments对象是一个类数组的对象可以被循环遍历但是无法使用Array的方法
+         * ...args:剩余参数，是一个数组对象
+         * **/
+        function brook(a, b, ...args) {
+            console.log(arguments)
+            console.log(args)
+
+        }
+        brook(1, 2, 3, 4, 5)
+    </script>
+</body>
+
+</html>
